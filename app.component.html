@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 appStyle="yellow" [dStyles]="{border: '2px solid green'}">Angular Directives</h1>
+
+  <p appStyle="red" [dStyles]="{border: '1px solid blue', fontWeight: 'bold', borderRadius: '5px'}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, obcaecati!</p>
+  <p appStyle="blue" [dStyles]="{border: '1px solid red', borderRadius: '5px'}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, obcaecati!</p>
+
+  <button class="btn" (click)="isVisible = !isVisible">toggle</button>
+
+<!--  <div class="wrap" *ngIf="isVisible">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda commodi debitis doloremque error expedita fugiat libero maxime provident soluta.</p>-->
+<!--  </div>-->
+
+<!--<ng-template [ngIf]="isVisible">-->
+<!--  <div class="wrap">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda commodi debitis doloremque error expedita fugiat libero maxime provident soluta.</p>-->
+<!--  </div>-->
+<!--</ng-template>-->
+
+<!--  <div class="wrap" *appIfNot="!isVisible">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda commodi debitis doloremque error expedita fugiat libero maxime provident soluta.</p>-->
+<!--  </div>-->
+
+  <ng-template [appIfNot]="!isVisible">
+    <div class="wrap" *appIfNot="!isVisible">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda commodi debitis doloremque error expedita fugiat libero maxime provident soluta.</p>
+    </div>
+  </ng-template>
+
+</div>
