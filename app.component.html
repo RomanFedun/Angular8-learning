@@ -22,4 +22,43 @@
   <p>
     {{ str | titlecase | slice:1:-2 }}
   </p>
+  <h3>Data pips</h3>
+  <p>
+    {{ Date }}
+  </p>
+  <p>
+    {{ Date | date }}
+  </p>
+  <p>
+    {{ Date | date: 'fullDate' }}
+  </p>
+  <p>
+    {{ Date | date: 'longDate' }}
+  </p>
+  <p>
+    {{ Date | date: 'long' }}
+  </p>
+  <p>
+    {{ Date | date: 'yyyy' }}
+  </p>
+  <p>
+    {{ Date | date: 'MM dd yyyy HH:mm:ss' }}
+  </p>
+  <h3>another pipe</h3>
+  <p>
+    {{ float | currency }}
+  </p>
+  <p>
+    {{ float | percent: '2.0-0'}}
+  </p>
+  <p>
+    {{ float }}
+  </p>
+  <pre>
+    {{ obj }}
+  </pre>
+  <pre>
+    {{ obj | json }}
+  </pre>
+
 </div>
