@@ -1,13 +1,21 @@
 <div class="container">
-  <h1>angular pipes , make own</h1>
-<p>
-  {{ 4 | mult }}
-  {{ 5 | mult }}
-  {{ 3 | mult: 3}}
-</p>
-<h1>make pipe by CLI</h1>
-<p>in terminal "do command": ng g p /NAME of file/ </p>
-  <p>
-    {{ 'Hello World     ' | exMarks }}
-  </p>
+  <h1>angular pipes</h1>
+
+  <app-post-form
+    (onAdd)="updatePosts($event)"
+  ></app-post-form>
+
+  <hr><br>
+
+
+  <button class="btn" (click)="searchField='title'" (click)="inp.focus()">search by title</button>    
+  <button class="btn" (click)="searchField='text'" (click)="inp.focus()">search by text</button>
+
+
+  <input #inp type=" text" placeholder="search..." [(ngModel)]="search">
+    <div *ngFor="let post of posts | filter: search: searchField"
+         class="card" >
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.text }}</p>
+    </div>
 </div>
