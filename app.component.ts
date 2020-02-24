@@ -1,43 +1,21 @@
-import {Component, Input} from '@angular/core';
-import { EventEmitter } from 'protractor';
-import { from } from 'rxjs';
-export interface Post {
-  title: string;
-  text: string;
-}
+import {Component} from '@angular/core';
+import { AppCounterService } from './services/app-counter.service';
+import { LocalCounterService } from './services/local-counter.service';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [LocalCounterService]
 })
 export class AppComponent {
-  
+    constructor(
+      private appCounterService: AppCounterService,
+      private localCounterService: LocalCounterService
+      ) {
 
-  search = '';
-  searchField = 'title';
-  
-  @Input() post: Post
+      
+    }
 
-  posts: Post[] = [
-    {title: 'Wood and board', text: 'it is good material for developing'},
-    {title: 'meat', text: 'it is good something to eat'},
-    {title: 'wolvo', text: 'it is good car to drive'}
-  ];
-
-  updatePosts(post: Post) {
-    this.posts.unshift(post)
-    console.log('Post', post);
   }
-
-  onFocus() {
-    console.log('ok');
-  }
-
-  // addPost() {
-  //   this.posts.unshift({
-  //    title: 'new post',
-  //    text: 'make new post by Roman Fedun'
-  //   })
-  // }
-
-}
